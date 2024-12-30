@@ -70,7 +70,7 @@ Un système de gestion d'inventaire distribué basé sur Java utilisant JavaFX p
 
 1. Cloner le dépôt :
 ```bash
-git clone https://github.com/yourusername/inventory-management.git
+git clone https://github.com/yzaza/inventory-management.git
 cd inventory-management
 ```
 
