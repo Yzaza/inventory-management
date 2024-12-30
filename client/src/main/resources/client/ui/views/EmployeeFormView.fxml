@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<VBox spacing="20" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="client.ui.controllers.EmployeeFormController">
+    <Label text="Employee Form" styleClass="heading"/>
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+            <ColumnConstraints halignment="LEFT" minWidth="200"/>
+        </columnConstraints>
+
+        <!-- Employee ID Field -->
+        <Label text="ID:"/>
+        <TextField fx:id="employeeIdField" GridPane.columnIndex="1" promptText="EmployeeID"/>
+
+        <!-- Username Field -->
+        <Label text="Username:" GridPane.rowIndex="1"/>
+        <TextField fx:id="employeeUsernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="Enter username"/>
+
+        <Label text="Fullname:" GridPane.rowIndex="2"/>
+        <TextField fx:id="employeeFullnameField" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Enter username"/>
+
+        <!-- Password Field -->
+        <Label text="Password:" GridPane.rowIndex="3"/>
+        <PasswordField fx:id="employeePasswordField" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="Enter password"/>
+
+        <!-- Role Field -->
+        <Label text="Role:" GridPane.rowIndex="4"/>
+        <ComboBox fx:id="employeeRoleField" GridPane.columnIndex="1" GridPane.rowIndex="4" promptText="Enter role">
+            <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="user" />
+                <String fx:value="admin" />
+            </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Created At Field -->
+        <Label text="Created At:" GridPane.rowIndex="5"/>
+        <TextField fx:id="employeeCreatedAtField" GridPane.columnIndex="1" GridPane.rowIndex="5" promptText="Enter creation timestamp"/>
+    </GridPane>
+
+    <!-- Save and Cancel Buttons -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Save" onAction="#handleSave"/>
+        <Button text="Cancel" onAction="#handleCancel"/>
+    </HBox>
+</VBox>

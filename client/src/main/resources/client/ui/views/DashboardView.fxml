@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.lang.String?>
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="client.ui.controllers.DashboardController" prefWidth="500" prefHeight="400">
+    <!-- Dashboard buttons -->
+    <VBox prefHeight="100" fx:id="vboxContainer" spacing="20" alignment="TOP_CENTER">
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Product Dashboard" styleClass="heading" onAction="#handleProductDashboard" />
+            <Button text="Employee Dashboard" styleClass="heading" onAction="#handleEmployeeDashboard" />
+            <Label fx:id="employeeNameLabel" text="Employee Name" styleClass="label-style" HBox.hgrow="ALWAYS" />
+            <Button fx:id="log_out" text="Log out" onAction="#logout"/>
+        </HBox>
+    </VBox>
+
+    <!-- Main container for switching views -->
+    <StackPane fx:id="dashboardContainer">
+        <!-- Product View -->
+        <VBox fx:id="productContainer" spacing="10" visible="true" managed="true">
+            <HBox spacing="10" alignment="CENTER">
+                <ComboBox fx:id="filterComboBox" prefWidth="150">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Name" />
+                            <String fx:value="Category" />
+                            <String fx:value="Quantity" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <TextField fx:id="searchField" promptText="Search..." />
+                <Button text="Search" styleClass="heading" onAction="#handleSearch" />
+            </HBox>
+            <TableView fx:id="productTable">
+                <columns>
+                    <TableColumn text="ID" fx:id="idColumn" />
+                    <TableColumn text="Name" fx:id="nameColumn" />
+                    <TableColumn text="Category" fx:id="categoryColumn" />
+                    <TableColumn text="Quantity" fx:id="quantityColumn" />
+                    <TableColumn text="Price" fx:id="priceColumn" />
+                </columns>
+            </TableView>
+            <HBox fx:id="productButtons" spacing="10">
+                <Button text="Add Product" onAction="#handleAddProduct" />
+                <Button text="Update Product" onAction="#handleUpdateProduct" />
+                <Button text="Delete Product" onAction="#handleDeleteProduct" />
+            </HBox>
+        </VBox>
+
+        <!-- Employee View -->
+        <VBox fx:id="employeeContainer" spacing="10" visible="false" managed="false">
+            <TableView fx:id="employeeTable">
+                <columns>
+                    <TableColumn text="Username" fx:id="employeeUsernameColumn" />
+                    <TableColumn text="Fullname" fx:id="employeeFullnameColumn" />
+                    <TableColumn text="Role" fx:id="employeeRoleColumn" />
+                </columns>
+            </TableView>
+            <HBox fx:id="employeeButtons" spacing="10">
+                <Button text="Add Employee" onAction="#handleAddEmployee" />
+                <Button text="Update Employee" onAction="#handleUpdateEmployee" />
+                <Button text="Delete Employee" onAction="#handleDeleteEmployee" />
+            </HBox>
+        </VBox>
+    </StackPane>
+</VBox>
