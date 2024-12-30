@@ -70,7 +70,7 @@ Un système de gestion d'inventaire distribué basé sur Java utilisant JavaFX p
 
 1. Cloner le dépôt :
 ```bash
-git clone https://github.com/yourusername/inventory-management.git
+git clone https://github.com/yzaza/inventory-management.git
 cd inventory-management
 ```
 
@@ -142,9 +142,6 @@ Pour compiler les modules individuels :
 # Compiler tout le projet
 mvn clean package
 
-# Compiler des modules spécifiques
-mvn clean package -pl client    # Compiler uniquement le client
-mvn clean package -pl server    # Compiler uniquement le serveur
 ```
 
 ## Identifiants par Défaut
