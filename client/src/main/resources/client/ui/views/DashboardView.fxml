@@ -4,7 +4,11 @@
 <?import javafx.scene.layout.*?>
 
 <?import java.lang.String?>
-<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="client.ui.controllers.DashboardController" prefWidth="500" prefHeight="400">
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="client.ui.controllers.DashboardController"
+      prefWidth="500" prefHeight="400"
+      styleClass="dashboard-container"
+      stylesheets="@../styles/styles.css">
+
     <!-- Dashboard buttons -->
     <VBox prefHeight="100" fx:id="vboxContainer" spacing="20" alignment="TOP_CENTER">
         <HBox spacing="10" alignment="CENTER">

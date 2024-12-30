@@ -2,7 +2,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="20" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="client.ui.controllers.ProductFormController">
+<VBox spacing="20" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="client.ui.controllers.ProductFormController"
+      styleClass="form-container"
+      stylesheets="@../styles/styles.css">
     <Label text="Product Form" styleClass="heading"/>
     <GridPane hgap="10" vgap="10">
         <columnConstraints>

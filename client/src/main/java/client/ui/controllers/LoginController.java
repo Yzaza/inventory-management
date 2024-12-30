@@ -87,7 +87,7 @@ public class LoginController {
                 DashboardController dashboardController = loader.getController();
                 dashboardController.setUserInfo(employee.isAdmin(), employee.getFullname(), username);
 
-                Scene dashboardScene = new Scene(root, 500, 400);
+                Scene dashboardScene = new Scene(root, 600, 400);
                 stage.setScene(dashboardScene);
                 stage.setTitle("Dashboard");
                 stage.setResizable(false);
