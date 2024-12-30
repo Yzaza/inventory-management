@@ -142,9 +142,6 @@ Pour compiler les modules individuels :
 # Compiler tout le projet
 mvn clean package
 
-# Compiler des modules spécifiques
-mvn clean package -pl client    # Compiler uniquement le client
-mvn clean package -pl server    # Compiler uniquement le serveur
 ```
 
 ## Identifiants par Défaut
